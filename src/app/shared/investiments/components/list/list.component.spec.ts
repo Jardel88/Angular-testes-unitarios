@@ -20,4 +20,19 @@ describe('ListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('(U) should list investments', () => {
+    let investiments = component.investiments;
+    expect(investiments.length).toBe(4);
+    expect(investiments[0].name).toContain('Itau');
+    expect(investiments[3].name).toContain('Bradesco');
+  })
+
+  it('(I) should list investments', () => {
+    let investiments = fixture.debugElement.nativeElement.querySelectorAll('.list-itens');
+
+    expect(investiments.length).toBe(4);
+    expect(investiments[0].textContent.trim()).toEqual('Itau | 100');
+    expect(investiments[3].textContent.trim()).toEqual('Bradesco | 100');
+  })
 });
