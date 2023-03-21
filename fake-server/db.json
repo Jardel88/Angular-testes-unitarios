@@ -1,0 +1,24 @@
+{
+  "investiments": [
+    {
+    "name": "Itau",
+    "value": 100
+  },
+  {
+    "name": "Banco do Brasil",
+    "value": 100
+  },
+  {
+    "name": "Santander",
+    "value": 100
+  },
+  {
+    "name": "Bradesco",
+    "value": 100
+  },
+  {
+    "name": "Teste",
+    "value": 100
+  }
+  ]
+}
