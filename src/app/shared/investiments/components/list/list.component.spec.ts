@@ -44,10 +44,14 @@ describe('ListComponent', () => {
   })
 
   it('(I) should list investments', () => {
+    spyOn(service, 'list').and.returnValue(of(mockList));
+
+    component.ngOnInit();
+    fixture.detectChanges();
     let investiments = fixture.debugElement.nativeElement.querySelectorAll('.list-itens');
 
-    expect(investiments.length).toBe(4);
-    expect(investiments[0].textContent.trim()).toEqual('Itau | 100');
-    expect(investiments[3].textContent.trim()).toEqual('Bradesco | 100');
+    expect(investiments.length).toEqual(5);
+    expect(investiments[0].textContent.trim()).toEqual('Banco 1 | 100');
+    expect(investiments[4].textContent.trim()).toEqual('Banco 5 | 100');
   })
 });
