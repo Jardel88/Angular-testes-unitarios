@@ -4,6 +4,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { TestBed } from '@angular/core/testing';
 
 import { ListInvestimentsService } from './list-investiments.service';
+import { MOCK_LIST } from './list-investiments.mock';
 
 describe('ListInvestimentsService', () => {
   let service: ListInvestimentsService;
@@ -11,13 +12,7 @@ describe('ListInvestimentsService', () => {
   let httpClient: HttpClient;
 
   const URL = 'http://localhost:3000/investiments';
-  const mockList: Array<Investiments> = [
-    {name: 'Banco 1', value: 100},
-    {name: 'Banco 2', value: 100},
-    {name: 'Banco 3', value: 100},
-    {name: 'Banco 4', value: 100},
-    {name: 'Banco 5', value: 100}
-  ]
+  const mockList: Array<Investiments> = MOCK_LIST;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
